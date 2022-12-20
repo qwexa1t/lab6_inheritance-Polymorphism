@@ -13,6 +13,7 @@
 #include "Triangle.h"
 #include "Trapezoid.h"
 #include "Circle.h"
+#include "EquilateralTriangle.h"
 using namespace std;
 
 void ChangeTrapezoid(Trapezoid& object)
@@ -41,16 +42,17 @@ int main()
 		printf("\n 3) Треугольник");
 		printf("\n 4) Трапеция");
 		printf("\n 5) Круг");
-		printf("\n 6) Завершить программу");
+		printf("\n 6) Равносторонний треугольник");
+		printf("\n 7) Завершить программу");
 		printf("\n\n Введите номер фигуры: ");
-		while (scanf("%d", &N) != 1 || N <= 0 || N > 6)
+		while (scanf("%d", &N) != 1 || N <= 0 || N > 7)
 		{
 			while (getchar() != '\n');
 			printf("\n Вы ввели Неверный номер. Повторите попытку.\n");
 			printf("\n Введите номер фигуры: ");
 		}
 		switch (N)
-		{
+	   {
 		case 1:
 		{
 			printf("\n Вы выбрали квадрат \n");
@@ -179,7 +181,28 @@ int main()
 			}
 			break;
 		}
-
+		case 6:
+		{
+			printf("\n Вы выбрали Равносторонний Треугольник \n");
+			printf("\n Пример \n");
+			EquilateralTriangle* EqTr = new EquilateralTriangle(1); //Выделение Динамической памяти объекту класса EquilateralTriangle
+			EqTr->print(); //Вывод площади Равностороннего Треугольника на экран
+			printf("\n\n Введите данные: \n\n");
+			EqTr->set(); //Установка значений
+			EqTr->print();
+			EquilateralTriangle* EqTr2 = new EquilateralTriangle();
+			EquilateralTriangle* EqTr3 = new EquilateralTriangle();
+			cout << "\n Вывод на экран Площадей равносторонних треугольников до присваивания" << endl;
+			EqTr2->print();
+			EqTr3->print();
+			EqTr3 = EqTr2 = EqTr;
+			cout << "\n Вывод на экран Площадей равносторонних треугольников после присваивания" << endl;
+			EqTr2->print();
+			EqTr3->print();
+			delete EqTr,EqTr2,EqTr3; //освобождение памяти
+			break;
 		}
-	} while (N != 6);
+
+	   }
+	} while (N != 7);
 }

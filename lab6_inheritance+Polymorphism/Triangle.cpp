@@ -13,6 +13,11 @@ Triangle::Triangle() //Конструктор без параметров
 	color = " ";
 }
 
+Triangle::Triangle(int side) //Конструктор c 1 параметром
+{
+	this->side = side;
+}
+
 Triangle::Triangle(int side, int height, string color) //Конструктор с параметрами
 {
 	this->side = side;

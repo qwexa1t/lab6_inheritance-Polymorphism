@@ -5,7 +5,7 @@ using namespace std;
 
 class Triangle : public Figure
 {
-private:
+protected:
 	int side;
 	int height;
 	string color;
@@ -13,6 +13,7 @@ private:
 public:
 	Triangle(); //Конструктор без параметров
 	Triangle(int side, int height, string color);//Конструктор с параметрами
+	Triangle(int side); //Конструктор с 1 параметром
 	~Triangle(); //Деструктор
 	void set(); //прототипы методов
 	void print();

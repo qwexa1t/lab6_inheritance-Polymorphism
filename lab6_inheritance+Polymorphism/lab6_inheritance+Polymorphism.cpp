@@ -186,19 +186,19 @@ int main()
 			printf("\n Вы выбрали Равносторонний Треугольник \n");
 			printf("\n Пример \n");
 			EquilateralTriangle* EqTr = new EquilateralTriangle(1); //Выделение Динамической памяти объекту класса EquilateralTriangle
-			EqTr->print(); //Вывод площади Равностороннего Треугольника на экран
+			cout << *EqTr; //Вывод площади Равностороннего Треугольника на экран
 			printf("\n\n Введите данные: \n\n");
 			EqTr->set(); //Установка значений
-			EqTr->print();
+			cout << *EqTr;
 			EquilateralTriangle* EqTr2 = new EquilateralTriangle();
 			EquilateralTriangle* EqTr3 = new EquilateralTriangle();
 			cout << "\n Вывод на экран Площадей равносторонних треугольников до присваивания" << endl;
-			EqTr2->print();
-			EqTr3->print();
+			cout << *EqTr2;
+			cout << *EqTr3;
 			EqTr3 = EqTr2 = EqTr;
 			cout << "\n Вывод на экран Площадей равносторонних треугольников после присваивания" << endl;
-			EqTr2->print();
-			EqTr3->print();
+			cout << *EqTr2;
+			cout << *EqTr3;
 			delete EqTr,EqTr2,EqTr3; //освобождение памяти
 			break;
 		}

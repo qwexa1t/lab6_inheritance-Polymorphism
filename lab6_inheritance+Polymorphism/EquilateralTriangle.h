@@ -12,6 +12,7 @@ public:
 	~EquilateralTriangle(); //Деструктор
 	void set(); //прототипы методов
 	void print();
-	float area();
-	EquilateralTriangle& operator = (const EquilateralTriangle & equilateraltriangle); //Перегрузка оператора присваивания
+	float area() const;
+	EquilateralTriangle& operator = (const EquilateralTriangle& equilateraltriangle); //Перегрузка оператора присваивания
+	friend ostream& operator << (ostream& out, const EquilateralTriangle& equilateraltriangle); //Перегрузка оператора << для замены метода Print()
 };

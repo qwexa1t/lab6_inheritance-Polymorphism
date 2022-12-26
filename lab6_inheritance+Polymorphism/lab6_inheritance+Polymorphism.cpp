@@ -57,9 +57,8 @@ int main()
 		{
 			printf("\n Вы выбрали квадрат \n");
 			printf("\n Пример \n");
-			//Вызов конструктора без параметров
-			Square* square1 = new Square; //Выделение Динамической памяти объекту класса Square
-			Square* square2 = new Square;
+			Square<int>* square1 = new Square<int>; //Выделение Динамической памяти объекту класса Square
+			Square<int>* square2 = new Square<int>;
 			(*square1).print(); //Вывод площади квадрата на экран
 			printf("\n\n Введите данные: \n\n");
 			(*square1).set(); //Установка значений

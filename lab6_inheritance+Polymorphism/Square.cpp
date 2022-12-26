@@ -5,24 +5,29 @@
 #include "Square.h"
 using namespace std;
 
-int Square::Count = 0;
+template <typename T>
+int Square<T>::Count = 0;
 
-Square::Square() //Конструктор без параметров
+template <typename T>
+Square<T>::Square() //Конструктор без параметров
 {
 	side = 4;
 	Count++;
 }
 
-Square::Square(int side) //Конструктор с параметрами
+template <typename T>
+Square<T>::Square(T side) //Конструктор с параметрами
 {
 	this->side = side;
 }
 
-Square::~Square() //Деструктор
+template <typename T>
+Square<T>::~Square() //Деструктор
 {
 }
 
-void Square::set()
+template <typename T>
+void Square<T>::set()
 {
 	printf(" Введите сторону:");
 	cin >> side;
@@ -40,14 +45,17 @@ void Square::set()
 
 }
 
-float Square::area()
+template <typename T>
+float Square<T>::area()
 {
 	return side * side;
 }
 
-void Square::print()
+template <typename T>
+void Square<T>::print()
 {
-	printf("\n Сторона - %d", side);
+	cout << "\n Сторона - " << side;
 	printf("\n Площадь - %.0f\n", area());
 }
 
+template class Square<int>;

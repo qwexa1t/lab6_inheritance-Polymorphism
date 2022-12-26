@@ -1,15 +1,16 @@
 #pragma once
 #include "Figure.h"
 
+template <typename T>
 class Square : public Figure
 {
 private:
-	int side;
+	T side;
 	static int Count;
 
 public:
 	Square(); //Конструктор без параметров
-	Square(int side);//Конструктор с параметрами
+	Square(T side);//Конструктор с параметрами
 	~Square(); //Деструктор
 	void set(); //прототипы методов
 	void print();
